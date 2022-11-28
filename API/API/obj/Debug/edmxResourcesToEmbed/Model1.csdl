@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManagerPatientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="AddressPatient" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Zipcode" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+  </EntityContainer>
+</Schema>
